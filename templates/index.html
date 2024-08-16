@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green API Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Green API Interface</h1>
+            <form id="apiForm">
+                <label for="idInstance">ID Instance:</label>
+                <input type="text" id="idInstance" name="idInstance" required>
+
+                <label for="apiToken">API Token:</label>
+                <!-- Здесь изменяем тип input на password -->
+                <input type="password" id="apiToken" name="apiToken" required>
+
+                <button type="button" onclick="getSettings()">Get Settings</button>
+                <button type="button" onclick="getStateInstance()">Get State</button>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" placeholder="77771234567">
+
+                <label for="message">Message:</label>
+                <input type="text" id="message" placeholder="Hello World!">
+
+                <button type="button" onclick="sendMessage()">Send Message</button>
+
+                <label for="fileUrl">File URL:</label>
+                <input type="text" id="fileUrl" placeholder="https://my.site.com/img/horse.png">
+
+                <button type="button" onclick="sendFileByUrl()">Send File by URL</button>
+            </form>
+        </div>
+
+        <div class="response-container">
+            <h2>Ответ:</h2>
+            <pre id="responseArea"></pre>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
